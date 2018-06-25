@@ -415,3 +415,98 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:49:32 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  Rendered playlists/index.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 50.6ms)
+
+
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:51:55 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  Rendered playlists/index.html.erb (1.0ms)
+Completed 200 OK in 70ms (Views: 55.5ms)
+
+
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:53:31 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  Rendered playlists/index.html.erb (1.0ms)
+Completed 200 OK in 87ms (Views: 66.1ms)
+
+
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:55:50 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  Rendered playlists/index.html.erb (7.0ms)
+Completed 200 OK in 77ms (Views: 60.5ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "number_of_votes") VALUES (?, ?)[0m  [["name", "Una lista genial"], ["number_of_votes", 20]]
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:57:33 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  [1m[36mPlaylist Load (1.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  Rendered playlists/index.html.erb (8.0ms)
+Completed 200 OK in 73ms (Views: 55.3ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "playlists"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "number_of_votes") VALUES (?, ?)[0m  [["name", "Una lista no tan genial"], ["number_of_votes", 30]]
+  [1m[35m (102.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:58:38 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  Rendered playlists/index.html.erb (4.0ms)
+Completed 200 OK in 81ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 22:59:07 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  Rendered playlists/index.html.erb (3.0ms)
+Completed 200 OK in 63ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/playlists" for 127.0.0.1 at 2018-06-24 23:05:21 -0500
+Processing by PlaylistsController#index as HTML
+  Rendering playlists/index.html.erb
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  Rendered playlists/index.html.erb (8.0ms)
+Completed 200 OK in 78ms (Views: 58.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/playlists/1" for 127.0.0.1 at 2018-06-24 23:05:32 -0500
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering playlists/show.html.erb
+  Rendered playlists/show.html.erb (214.0ms)
+Completed 500 Internal Server Error in 285ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `playlist' for #<#<Class:0x3f86658>:0x297c1f8>
+Did you mean?  @playlist):
+    1: <p>
+    2:     <strong>Name</strong>
+    3:     <%= playlist.name%>
+    4: </p>
+  
+app/views/playlists/show.html.erb:3:in `_app_views_playlists_show_html_erb__866643273_21851952'
+Started GET "/playlists/1" for 127.0.0.1 at 2018-06-24 23:05:57 -0500
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.0ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering playlists/show.html.erb
+  Rendered playlists/show.html.erb (0.0ms)
+Completed 200 OK in 64ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
